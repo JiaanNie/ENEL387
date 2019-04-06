@@ -27,26 +27,36 @@ Project File Date:  04/05/2019
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
-compiling HexToString.c...
 compiling Delay.c...
+compiling HexToString.c...
 compiling IntToString.c...
 compiling EnableGPIOx.c...
 compiling LCD_Config.c...
 compiling main.c...
+UARTConfig.h(7): warning:  #1-D: last line of file ends without a newline
+  char UART2_ReceiveData(void);
 main.c(15): warning:  #177-D: variable "sdata"  was declared but never referenced
   	char sdata = '0';
-main.c(16): warning:  #177-D: variable "data"  was declared but never referenced
-  	char data;
-main.c: 2 warnings, 0 errors
+main.c(18): warning:  #550-D: variable "command"  was set but never used
+  	int command;
+main.c(20): warning:  #550-D: variable "temp"  was set but never used
+  	char temp[2];
+main.c: 4 warnings, 0 errors
 compiling SystemClock.c...
 compiling UARTConfig.c...
-assembling startup_stm32f10x_md_vl.s...
+UARTConfig.h(7): warning:  #1-D: last line of file ends without a newline
+  char UART2_ReceiveData(void);
+UARTConfig.c: 1 warning, 0 errors
 compiling PWM_Config.c...
+assembling startup_stm32f10x_md_vl.s...
 compiling Robot.c...
+UARTConfig.h(7): warning:  #1-D: last line of file ends without a newline
+  char UART2_ReceiveData(void);
+Robot.c: 1 warning, 0 errors
 compiling system_stm32f10x.c...
 linking...
-Program Size: Code=1736 RO-data=304 RW-data=0 ZI-data=1632  
-".\Objects\robot.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=2112 RO-data=304 RW-data=0 ZI-data=1632  
+".\Objects\robot.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -73,10 +83,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.1.2
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
-      Source file:   Device\Source\ARM\startup_stm32f10x_md_vl.s
       Source file:   Device\Source\system_stm32f10x.c
       Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\startup_stm32f10x_md_vl.s
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
 Build Time Elapsed:  00:00:02
 </pre>
 </body>
