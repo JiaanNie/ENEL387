@@ -5,7 +5,7 @@ void Robot_init(void){
 	EnableGPIOx("abcd");
 	ConfigLCDPins();
 	LCDInit();
-	UART_Init();
+	UART2_Init();
 	ClearLCDLine(1);
 	WriteToLCD(1, "DiscordBot: ");
 	PWM_Init();
@@ -14,10 +14,11 @@ void Robot_init(void){
 
 void Move_forward(void){
 	//2ms that mean  4
-	int rotation = 4;
-	Update_PA8_PWM(rotation);
+	Update_PA8_PWM(4);
 	Update_PA9_PWM(2);
 	Delay(30000000);
+	Update_PA8_PWM(0);
+	Update_PA9_PWM(0);
 
 }
 

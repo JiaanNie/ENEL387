@@ -2,16 +2,7 @@
 void processCommand(int command);
 
 int main(void){
-	configureSystemClock();
-	EnableGPIOx("abcd");
-	ConfigLCDPins();
-	LCDInit();
-	UART2_Init();
-	ClearLCDLine(1);
-	WriteToLCD(1, "DiscordBot: ");
-	PWM_Init();
-	PWM2_Init();
-	ClearLCDLine(2);
+	Robot_init();
 	char sdata = '0';
 	char data2;
 	char message[16];
@@ -41,10 +32,10 @@ int main(void){
 					for (int i =0; i < 16; i++){
 						message[i] = '\0';
 					}
-					
-					
+					processCommand(command);
 				}
 			}
+			
 		}
 	}
 }
@@ -53,9 +44,12 @@ void processCommand(int command){
 	switch (command){
 		case 1:
 			// move up
+			//WriteToLCD(2, "hi");
+			Move_forward();
 			break;
 		case 2:
 			// move down
+			Move_back();
 			break;
 		case 3:
 			// move left
